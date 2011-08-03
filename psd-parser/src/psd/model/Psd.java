@@ -16,7 +16,7 @@
  * <http://www.gnu.org/licenses/>.
  */
 
-package psd;
+package psd.model;
 
 import java.awt.image.BufferedImage;
 import java.io.*;

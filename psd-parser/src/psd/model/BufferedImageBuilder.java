@@ -1,4 +1,4 @@
-package psd;
+package psd.model;
 
 import java.awt.image.*;
 import java.util.List;

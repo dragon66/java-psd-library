@@ -1,4 +1,4 @@
-package psd;
+package psd.model;
 
 public interface LayersContainer {
     public Layer getLayer(int index);

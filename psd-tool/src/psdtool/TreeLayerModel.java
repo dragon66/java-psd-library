@@ -1,8 +1,8 @@
 package psdtool;
 
-import psd.Layer;
-import psd.LayersContainer;
-import psd.Psd;
+import psd.model.Layer;
+import psd.model.LayersContainer;
+import psd.model.Psd;
 import psd.parser.layer.LayerType;
 
 import javax.swing.event.TreeModelEvent;

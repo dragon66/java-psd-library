@@ -1,6 +1,6 @@
 package psdtool;
 
-import psd.Psd;
+import psd.model.Psd;
 
 import javax.swing.*;
 import java.awt.*;
