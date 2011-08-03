@@ -1,10 +1,9 @@
-package psd.model;
+package psd.util;
 
 import java.awt.image.*;
 import java.util.List;
 
 import psd.parser.layer.Channel;
-import psd.util.ChannelUncompressor;
 
 public class BufferedImageBuilder {
 

@@ -26,6 +26,7 @@ import psd.parser.*;
 import psd.parser.header.*;
 import psd.parser.imagedata.ImageDataSectionHandler;
 import psd.parser.layer.*;
+import psd.util.BufferedImageBuilder;
 
 public class Psd implements LayersContainer {
     private Header header;
