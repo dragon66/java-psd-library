@@ -1,6 +1,6 @@
 package psdtool;
 
-import psd.model.Layer;
+import psd.model.AbstractLayer;
 import psd.model.LayersContainer;
 import psd.model.Psd;
 import psd.parser.layer.LayerType;
@@ -11,7 +11,7 @@ import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreePath;
 import java.util.LinkedList;
 
-public class TreeLayerModel implements TreeModel {
+public class TreeLayerModel<T extends AbstractLayer<T>> implements TreeModel {
 
     private Psd psd;
     private LinkedList<TreeModelListener> listeners = new LinkedList<TreeModelListener>();
@@ -36,29 +36,30 @@ public class TreeLayerModel implements TreeModel {
 
     @Override
     public Object getChild(Object parent, int index) {
-        return ((LayersContainer) parent).getLayer(index);
+        return ((LayersContainer<?>) parent).getLayer(index);
     }
 
     @Override
     public int getChildCount(Object parent) {
-        return ((LayersContainer) parent).getLayersCount();
+        return ((LayersContainer<?>) parent).getLayersCount();
     }
 
     @Override
     public boolean isLeaf(Object node) {
-        return node instanceof Layer && ((Layer) node).getType() == LayerType.NORMAL;
+        return node instanceof AbstractLayer && ((AbstractLayer<?>) node).getType() == LayerType.NORMAL;
     }
 
     @Override
     public void valueForPathChanged(TreePath path, Object newValue) {
     }
 
-    @Override
+	@Override
+    @SuppressWarnings("unchecked")
     public int getIndexOfChild(Object parent, Object child) {
-        return ((LayersContainer) parent).indexOfLayer((Layer) child);
+        return ((LayersContainer<T>) parent).indexOfLayer((T)child);
     }
 
-    @Override
+	@Override
     public void addTreeModelListener(TreeModelListener l) {
         listeners.add(l);
     }

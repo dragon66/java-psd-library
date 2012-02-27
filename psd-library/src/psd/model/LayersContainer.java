@@ -1,7 +1,7 @@
 package psd.model;
 
-public interface LayersContainer {
-    public Layer getLayer(int index);
-    public int indexOfLayer(Layer layer);
+public interface LayersContainer<T extends AbstractLayer<?>> {
+    public T getLayer(int index);
+    public int indexOfLayer(T layer);
     public int getLayersCount();
 }

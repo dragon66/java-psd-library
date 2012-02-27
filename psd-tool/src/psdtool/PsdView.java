@@ -31,7 +31,7 @@ public class PsdView extends JComponent {
         }
     }
 
-    private void paintLayersContainer(Graphics2D g, LayersContainer container, float alpha) {
+    private void paintLayersContainer(Graphics2D g, LayersContainer<Layer> container, float alpha) {
         for (int i = 0; i < container.getLayersCount(); i++) {
             Layer layer = container.getLayer(i);
             if (!layer.isVisible()) {

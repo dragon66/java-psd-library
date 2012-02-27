@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project name="psd-library" default="build" basedir=".">
+
+  <property name="current-version" value="0.0.2" />
+  
+  <property name="filename" value="psd-library" />
+  <property name="jarname" value="${filename}-${current-version}.jar" />
+  <property name="zipname" value="${filename}-src-${current-version}.zip" />
+  
+  <target name="build">
+    <mkdir dir="classes" />
+    <javac srcdir="src" destdir="classes" includeantruntime="false" />
+    <jar file="${jarname}" basedir="classes" />
+  </target>
+
+  <target name="prepare-sources">
+    <zip destfile="${zipname}" basedir="src" />
+  </target>
+  
+  <target name="clean">
+    <delete dir="classes" failonerror="false" />
+    <delete file="${jarname}" failonerror="false" />
+    <delete file="${zipname}" failonerror="false" />
+  </target>
+  
+</project>

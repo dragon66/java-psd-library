@@ -54,4 +54,9 @@ public class Matrix {
 	public double m23() {
 		return m23;
 	}
+	
+	@Override
+	public String toString() {
+		return "{{ " + m11 + ", " + m12 + ", " + m13 + "}, {" + m21 + ", " + m22 + ", " + m23 + "}}";
+	}
 }
