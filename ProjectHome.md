@@ -1,0 +1,1 @@
+java-psd-library is pure java psd format parser.
